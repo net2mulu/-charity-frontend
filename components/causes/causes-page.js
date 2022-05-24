@@ -3,12 +3,12 @@ import Link from "next/link";
 import { Container } from "react-bootstrap";
 import PostPaginations from "../post-paginations";
 
-import causeImage1 from "../../assets/images/causes/cause-1-1.jpg";
-import causeImage2 from "../../assets/images/causes/cause-1-2.jpg";
-import causeImage3 from "../../assets/images/causes/cause-1-3.jpg";
-import causeImage4 from "../../assets/images/causes/cause-1-4.jpg";
-import causeImage5 from "../../assets/images/causes/cause-1-5.jpg";
-import causeImage6 from "../../assets/images/causes/cause-1-6.jpg";
+import causeImage1 from "/images/causes/cause-1-1.jpg";
+import causeImage2 from "/images/causes/cause-1-2.jpg";
+import causeImage3 from "/images/causes/cause-1-3.jpg";
+import causeImage4 from "/images/causes/cause-1-4.jpg";
+import causeImage5 from "/images/causes/cause-1-5.jpg";
+import causeImage6 from "/images/causes/cause-1-6.jpg";
 const CAUSES_DATA = [
   {
     image: causeImage1,

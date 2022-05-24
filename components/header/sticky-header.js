@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import NavLinks from "./nav-links";
-const logoLight = "/images/logo-light.png";
+import NavLinks from "components/nav-links";
+const logoLight = "/images/wlogo.png";
 
 const StickyHeader = ({ extraClassName }) => {
   const [sticky, setSticky] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Link from "next/link";
-import NavLinks from "./header/nav-links";
-import { MenuContext } from "../context/menu-context";
+import NavLinks from "components/header/nav-links";
+import { MenuContext } from "context/menu-context";
 
 const logoLight = "/images/logo-light.png";
 const flag1 = "/images/resources/flag-1-1.jpg";

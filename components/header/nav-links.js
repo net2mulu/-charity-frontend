@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Link from "next/link";
-import { SearchContext } from "../../context/search-context";
+import { SearchContext } from "context/search-context";
 
 const NavLinks = ({ extraClassName }) => {
   const { searchStatus, updateSearchStatus } = useContext(SearchContext);
@@ -15,7 +15,7 @@ const NavLinks = ({ extraClassName }) => {
   };
   return (
     <ul className={`main-menu__list ${extraClassName}`}>
-      <li className="dropdown">
+      <li>
         <Link href="/">
           <a>Home</a>
         </Link>
@@ -75,30 +75,10 @@ const NavLinks = ({ extraClassName }) => {
           </li>
         </ul>
       </li>
-      <li className="dropdown">
-        <Link href="/news">
-          <>
-            <a>News</a>
-            <button
-              aria-label="dropdown toggler"
-              onClick={handleDropdownStatus}
-            >
-              <i className="fa fa-angle-down"></i>
-            </button>
-          </>
+      <li className="">
+        <Link href="/blog">
+          <a>Blog</a>
         </Link>
-        <ul className="dropdown-list">
-          <li>
-            <Link href="/news">
-              <a>News</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/news-details">
-              <a>News Details</a>
-            </Link>
-          </li>
-        </ul>
       </li>
       <li className="dropdown">
         <Link href="#">

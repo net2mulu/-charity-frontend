@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import BlogContent from "./blog-content";
-import Comments from "./comments";
-import CommentForm from "./comment-form";
-import BlogSidebar from "./blog-sidebar";
+import BlogContent from "components/blog-content";
+import Comments from "components/comments";
+import CommentForm from "components/comment-form";
+import BlogSidebar from "components/blog-sidebar";
 
 const BlogDetails = () => {
   return (

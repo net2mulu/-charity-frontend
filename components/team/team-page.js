@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import TeamCard from "./team-card";
+import TeamCard from "components/team-card";
 
 const teamImage1 = "/images/team/team-1-1.jpg";
 const teamImage2 = "/images/team/team-1-2.jpg";

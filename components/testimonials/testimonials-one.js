@@ -1,37 +1,16 @@
 import React from "react";
+import Image from "next/image";
 import { Container, Row, Col } from "react-bootstrap";
 
-const  bgImage =  "../../assets/images/shapes/testimonials-map-1-1.png";
-const  heart  = "../../assets/images/shapes/heart-2-1.png";
-const  image1  =  "../../assets/images/resources/testimonial-1-1.jpg";
-const  image2  =  "../../assets/images/resources/testimonial-1-2.jpg";
-const  image3  =  "../../assets/images/resources/testimonial-1-3.jpg";
+const bgImage = "/images/shapes/testimonials-map-1-1.png";
 
-const TESTIMONIALS_ONE_DATA = [
-  {
-    image: image1,
-    text:
-      "There are many variations of passages of lorsum available but the majority have suffered alteration in form, by injected not humour.",
-    name: "Alex Cooper",
-    designation: "Customer"
-  },
-  {
-    image: image2,
-    text:
-      "There are many variations of passages of lorsum available but the majority have suffered alteration in form, by injected not humour.",
-    name: "Alex Cooper",
-    designation: "Customer"
-  },
-  {
-    image: image3,
-    text:
-      "There are many variations of passages of lorsum available but the majority have suffered alteration in form, by injected not humour.",
-    name: "Alex Cooper",
-    designation: "Customer"
-  }
-];
+const image1 = "/images/about/vision.png";
+const image2 = "/images/about/mission.png";
+const image3 = "/images/about/values.png";
 
-const TestimonialsOne = () => {
+const TestimonialsOne = ({ cdata }) => {
+  const { company, csmall_desc, clong_desc, vision, mission, values } =
+    cdata.data.attributes;
   return (
     <section
       className="testimonials-one pt-120 pb-90"
@@ -42,39 +21,67 @@ const TestimonialsOne = () => {
           <Row className=" align-items-center">
             <Col md={12} lg={7}>
               <div className="block-title">
-                <p>
-                  <img src={heart} width="15" alt="" />
-                  Our Testimonials
-                </p>
-                <h3>
-                  What they are talking <br /> about azino.
-                </h3>
+                <p>{company}</p>
+                <h3>{csmall_desc}</h3>
               </div>
             </Col>
             <Col md={12} lg={5}>
-              <p className="team-about__top-text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Have you done google research which works all the
-                time.{" "}
-              </p>
+              <p className="team-about__top-text">{clong_desc}</p>
             </Col>
           </Row>
         </div>
         <Row>
-          {TESTIMONIALS_ONE_DATA.map(
-            ({ image, designation, text, name }, index) => (
-              <Col lg={4} key={`testimonials-post-key-${index}`}>
-                <div className="testimonials-one__single">
-                  <div className="testimonials-one__image">
-                    <img src={image} alt="" />
-                  </div>
-                  <p>{text}</p>
-                  <h3>{name}</h3>
-                  <span>{designation}</span>
-                </div>
-              </Col>
-            )
-          )}
+          <Col lg={4}>
+            <div className="testimonials-one__single">
+              <div
+                style={{ paddingTop: "20px" }}
+                className="testimonials-one__image"
+              >
+                <Image src={image1} width="50" height="50" alt="" />
+              </div>
+
+              <h3 style={{ marginTop: "5px" }}>Vision</h3>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: vision,
+                }}
+              />
+            </div>
+          </Col>
+          <Col lg={4}>
+            <div className="testimonials-one__single">
+              <div
+                style={{ paddingTop: "20px" }}
+                className="testimonials-one__image"
+              >
+                <Image src={image2} width="50" height="50" alt="" />
+              </div>
+
+              <h3 style={{ marginTop: "5px" }}>Mission</h3>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: mission,
+                }}
+              />
+            </div>
+          </Col>
+          <Col lg={4}>
+            <div className="testimonials-one__single">
+              <div
+                style={{ paddingTop: "20px" }}
+                className="testimonials-one__image"
+              >
+                <Image src={image3} width="50" height="50" alt="" />
+              </div>
+
+              <h3 style={{ marginTop: "5px" }}>Values</h3>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: values,
+                }}
+              />
+            </div>
+          </Col>
         </Row>
       </Container>
     </section>

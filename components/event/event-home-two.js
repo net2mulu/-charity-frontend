@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import EventCard from "./event-card";
-import bgImage from "../../assets/images/shapes/event-map-1-2.png";
-import image1 from "../../assets/images/events/event-1-1.jpg";
-import image2 from "../../assets/images/events/event-1-2.jpg";
-import image3 from "../../assets/images/events/event-1-3.jpg";
-import image4 from "../../assets/images/events/event-1-4.jpg";
-import heart from "../../assets/images/shapes/heart-2-1.png";
+import EventCard from "components/event-card";
+import bgImage from "/assets/images/shapes/event-map-1-2.png";
+import image1 from "/assets/images/events/event-1-1.jpg";
+import image2 from "/assets/images/events/event-1-2.jpg";
+import image3 from "/assets/images/events/event-1-3.jpg";
+import image4 from "/assets/images/events/event-1-4.jpg";
+import heart from "/assets/images/shapes/heart-2-1.png";
 
 const EVENT_HOME_TWO_DATA = [
   {
@@ -15,7 +15,7 @@ const EVENT_HOME_TWO_DATA = [
     date: "20 May",
     time: "9:00am 02:00pm",
     location: "New York",
-    link: "/event-details"
+    link: "/event-details",
   },
   {
     image: image2,
@@ -23,7 +23,7 @@ const EVENT_HOME_TWO_DATA = [
     date: "20 May",
     time: "9:00am 02:00pm",
     location: "New York",
-    link: "/event-details"
+    link: "/event-details",
   },
   {
     image: image3,
@@ -31,7 +31,7 @@ const EVENT_HOME_TWO_DATA = [
     date: "20 May",
     time: "9:00am 02:00pm",
     location: "New York",
-    link: "/event-details"
+    link: "/event-details",
   },
   {
     image: image4,
@@ -39,8 +39,8 @@ const EVENT_HOME_TWO_DATA = [
     date: "20 May",
     time: "9:00am 02:00pm",
     location: "New York",
-    link: "/event-details"
-  }
+    link: "/event-details",
+  },
 ];
 const EventHomeTwo = () => {
   return (

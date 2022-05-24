@@ -2,9 +2,9 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Pagination, EffectFade } from "swiper";
-import banner1 from "../../assets/images/main-slider/slider-2-1.jpg";
-import banner2 from "../../assets/images/main-slider/slider-1-2.jpg";
-import banner3 from "../../assets/images/main-slider/slider-1-1.jpg";
+import banner1 from "/images/main-slider/slider-2-1.jpg";
+import banner2 from "/images/main-slider/slider-1-2.jpg";
+import banner3 from "/images/main-slider/slider-1-1.jpg";
 
 SwiperCore.use([Autoplay, Pagination, EffectFade]);
 

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { SearchContext } from "../context/search-context";
+import { SearchContext } from "context/search-context";
 const SearchPopup = () => {
   const { searchStatus, updateSearchStatus } = useContext(SearchContext);
   const handleSearchClick = (e) => {

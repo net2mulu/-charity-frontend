@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 
 const BrandCarousel = ({ extraClass, brandData }) => {
-  console.log(brandData);
   const brandCarouselOptions = {
     spaceBetween: 100,
     slidesPerView: 5,

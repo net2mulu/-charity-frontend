@@ -1,7 +1,7 @@
 import React from "react";
-import postImage1 from "../../assets/images/blog/blog-s-1.jpg";
-import postImage2 from "../../assets/images/blog/blog-s-2.jpg";
-import postImage3 from "../../assets/images/blog/blog-s-3.jpg";
+import postImage1 from "/images/blog/blog-s-1.jpg";
+import postImage2 from "/images/blog/blog-s-2.jpg";
+import postImage3 from "/images/blog/blog-s-3.jpg";
 
 const BlogSidebar = () => {
   return (

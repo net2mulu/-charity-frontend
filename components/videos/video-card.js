@@ -4,10 +4,12 @@ import { Container } from "react-bootstrap";
 import dynamic from "next/dynamic";
 const ModalVideo = dynamic(() => import("react-modal-video"), { ssr: false });
 
-const bgImage = "../../assets/images/backgrounds/page-header-1-1.jpg";
-const heart = "../../assets/images/shapes/heart-2-1.png";
+const bgImage = "/images/backgrounds/page-header-1-1.jpg";
+const heart = "/images/shapes/heart-2-1.png";
 
-const VideoCard = () => {
+const VideoCard = ({ vidcta }) => {
+  const { small_desc, long_desc, background } = vidcta;
+  const { url } = background.data.attributes;
   const [isOpen, setOpen] = useState(false);
   return (
     <section className="video-card">
@@ -20,18 +22,12 @@ const VideoCard = () => {
       />
       <div
         className="video-card__bg"
-        style={{ backgroundImage: `url(${bgImage})` }}
+        style={{ backgroundImage: `url(http://localhost:1337${url})` }}
       ></div>
 
       <Container className=" text-center pt-120 pb-120">
-        <p>
-          <img src={heart} width="15" alt="" />
-          Help Other People
-        </p>
-        <h3>
-          Our fingerprints on the <br />
-          lives we touch never fade.
-        </h3>
+        <p>{small_desc}</p>
+        <h3>{long_desc}</h3>
         <div className="video-card__btn-block">
           <Link href="/cause-details">
             <a className="thm-btn dynamic-radius">Start Donating</a>

@@ -1,17 +1,17 @@
-import Layout from "../components/layout";
-import HeaderOne from "../components/header/header-one";
-import StickyHeader from "../components/header/sticky-header";
-import MenuContextProvider from "../context/menu-context";
-import SearchContextProvider from "../context/search-context";
-import MainSlider from "../components/slider/main-slider";
-import VideoCardTwo from "../components/videos/video-card-two";
-import AboutCounter from "../components/about/about-counter";
-import ServiceOne from "../components/services/service-one";
-import CausesHome from "../components/causes/causes-home";
-import CallToActionTwo from "../components/call-to-action/call-to-action-two";
-import BlogHome from "../components/blog/blog-home";
-import TeamHome from "../components/team/team-home";
-import BrandCarousel from "../components/brand-carousel";
+import Layout from "components/layout";
+import HeaderOne from "components/header/header-one";
+import StickyHeader from "components/header/sticky-header";
+import MenuContextProvider from "context/menu-context";
+import SearchContextProvider from "context/search-context";
+import MainSlider from "components/slider/main-slider";
+import VideoCardTwo from "components/videos/video-card-two";
+import AboutCounter from "components/about/about-counter";
+import ServiceOne from "components/services/service-one";
+import CausesHome from "components/causes/causes-home";
+import CallToActionTwo from "components/call-to-action/call-to-action-two";
+import BlogHome from "components/blog/blog-home";
+import TeamHome from "components/team/team-home";
+import BrandCarousel from "components/brand-carousel";
 
 export default function Home(props) {
   return (
@@ -26,7 +26,7 @@ export default function Home(props) {
           <MainSlider bannerData={props.bannerData} />
           <VideoCardTwo vedioIntro={props.vedioIntro} />
           <ServiceOne homeServices={props.homeServices} />
-          <AboutCounter />
+          <AboutCounter aboutcardData={props.aboutcardData} />
           <CausesHome />
           <CallToActionTwo ctaData={props.ctaData} />
           <TeamHome />
@@ -60,6 +60,10 @@ export async function getServerSideProps() {
 
   const brand = await fetch("http://localhost:1337/api/partners?populate=*");
   const brandData = await brand.json();
+  const aboutcard = await fetch(
+    "http://localhost:1337/api/about-card?populate=*"
+  );
+  const aboutcardData = await aboutcard.json();
 
   return {
     props: {
@@ -70,6 +74,7 @@ export async function getServerSideProps() {
       footerData,
       ctaData,
       brandData,
+      aboutcardData,
     },
   };
 }

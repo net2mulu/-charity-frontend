@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
-import heart from "../../assets/images/shapes/heart-2-1.png";
-import welcomeImage from "../../assets/images/resources/welcome-1-1.png";
-import aboutImage from "../../assets/images/shapes/about-bag-1-2.png";
+import heart from "/images/shapes/heart-2-1.png";
+import welcomeImage from "/images/resources/welcome-1-1.png";
+import aboutImage from "/images/shapes/about-bag-1-2.png";
 
 const AboutTwo = () => {
   return (

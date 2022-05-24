@@ -1,13 +1,12 @@
 import React from "react";
 import Link from "next/link";
-const  pageHeaderBg =  "/images/backgrounds/page-header-1-1.jpg";
 
-const PageHeader = ({ title, crumbTitle }) => {
+const PageHeader = ({ title, crumbTitle, url }) => {
   return (
     <section className="page-header">
       <div
         className="page-header__bg"
-        style={{ backgroundImage: `url(${pageHeaderBg})` }}
+        style={{ backgroundImage: `url(http://localhost:1337${url})` }}
       ></div>
 
       <div className="container">

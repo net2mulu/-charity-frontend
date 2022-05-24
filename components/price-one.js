@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
-import heart from "../assets/images/shapes/heart-2-1.png";
-import priceBox from "../assets/images/resources/price-box-1-1.jpg";
+import heart from "/images/shapes/heart-2-1.png";
+import priceBox from "/images/resources/price-box-1-1.jpg";
 const PRICE_ONE_DATA = [
   {
     title: "Silver Package",

@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
-import GalleryCard from "./gallery-card";
+import GalleryCard from "components/gallery-card";
 
 const galleryImage1 =  "/images/gallery/gallery-3-1.jpg";
 const galleryImage2 =  "/images/gallery/gallery-3-2.jpg";

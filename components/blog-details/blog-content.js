@@ -1,5 +1,5 @@
 import React from "react";
-import blogDetailsImage from "../../assets/images/blog/blog-d-1-1.jpg";
+import blogDetailsImage from "/images/blog/blog-d-1-1.jpg";
 
 const BlogContent = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import causeImage from "../assets/images/resources/featured-cause.jpg";
+import causeImage from "/images/resources/featured-cause.jpg";
 const FeaturedCause = () => {
   return (
     <section className="featured-cause">

@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import cardBg from "../../assets/images/shapes/contact-card-bg-1-1.png";
+import cardBg from "/images/shapes/contact-card-bg-1-1.png";
 
 const ContactCardCarousel = () => {
   const swiperOptions = {

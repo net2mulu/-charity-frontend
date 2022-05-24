@@ -1,18 +1,22 @@
 import React from "react";
-import Layout from "../components/layout";
-import HeaderOne from "../components/header/header-one";
-import StickyHeader from "../components/header/sticky-header";
-import PageHeader from "../components/page-header";
-import AboutOne from "../components/about/about-one";
-import AboutCounter from "../components/about/about-counter";
-import TeamHome from "../components/team/team-home";
-import VideoCard from "../components/videos/video-card";
-import TestimonialsOne from "../components/testimonials/testimonials-one";
-import BrandCarousel from "../components/brand-carousel";
-import MenuContextProvider from "../context/menu-context";
-import SearchContextProvider from "../context/search-context";
+import Layout from "components/layout";
+import HeaderOne from "components/header/header-one";
+import StickyHeader from "components/header/sticky-header";
+import PageHeader from "components/page-header";
+import AboutOne from "components/about/about-one";
+import AboutCounter from "components/about/about-counter";
+import TeamHome from "components/team/team-home";
+import VideoCard from "components/videos/video-card";
+import TestimonialsOne from "components/testimonials/testimonials-one";
+import BrandCarousel from "components/brand-carousel";
+import MenuContextProvider from "context/menu-context";
+import SearchContextProvider from "context/search-context";
 
 const About = (props) => {
+  const { url } =
+    props.aboutData.data.attributes.header.background.data.attributes;
+  const { header, vidcta } = props.aboutData.data.attributes;
+
   return (
     <MenuContextProvider>
       <SearchContextProvider>
@@ -20,18 +24,19 @@ const About = (props) => {
           pageTitle="About Andinet Yichalal"
           footerData={props.footerData}
         >
-          <PageHeader title="About Page" crumbTitle="About" />
           <HeaderOne headerData={props.headerData} />
           <StickyHeader />
-          <AboutOne />
+          <PageHeader url={url} title={header.title} crumbTitle="About" />
+          <AboutOne aboutData={props.aboutData} />
+
+          <AboutCounter aboutcardData={props.aboutcardData} />
+          <TeamHome />
+          <VideoCard vidcta={vidcta} />
+          <TestimonialsOne cdata={props.aboutData} />
           <BrandCarousel
             brandData={props.brandData}
             extraClass="client-carousel__has-border-top"
           />
-          <AboutCounter />
-          <TeamHome />
-          <VideoCard />
-          <TestimonialsOne />
         </Layout>
       </SearchContextProvider>
     </MenuContextProvider>
@@ -52,11 +57,23 @@ export async function getServerSideProps() {
   const brand = await fetch("http://localhost:1337/api/partners?populate=*");
   const brandData = await brand.json();
 
-  return {
+  const about = await fetch(
+    "http://localhost:1337/api/about?populate[header][populate][0]=background&populate[vidcta][populate][0]=background&populate[bcd1][populate][0]=*&populate[bcd2][populate][0]=*&populate[centerLogo][populate][0]=*"
+  );
+  const aboutData = await about.json();
+
+  const aboutcard = await fetch(
+    "http://localhost:1337/api/about-card?populate=*"
+  );
+  const aboutcardData = await aboutcard.json();
+
+  http: return {
     props: {
       headerData,
       footerData,
       brandData,
+      aboutData,
+      aboutcardData,
     },
   };
 }

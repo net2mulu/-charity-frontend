@@ -1,24 +1,20 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const BlogCard = ({ image, title, date, text, link, commentCount, author }) => {
   return (
     <div className="blog-card">
       <div className="blog-card__inner">
-        <div className="blog-card__image">
-          <img src={image} alt="" />
+        <div className="blog-card__image" style={{}}>
+          <Image width="370" height="276" src={image} alt="" />
           <div className="blog-card__date">{date}</div>
         </div>
         <div className="blog-card__content">
           <div className="blog-card__meta">
             <Link href={link}>
               <a>
-                <i className="far fa-user-circle"></i> {author}
-              </a>
-            </Link>
-            <Link href={link}>
-              <a>
-                <i className="far fa-comments"></i> {commentCount}
+                <i className="far fa-user-circle"></i> {`By: ${author}`}
               </a>
             </Link>
           </div>

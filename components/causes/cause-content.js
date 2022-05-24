@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import causeImage1 from "../../assets/images/causes/cause-d-1-1.jpg";
-import comment1 from "../../assets/images/blog/comment-1-1.jpg";
-import comment2 from "../../assets/images/blog/comment-1-2.jpg";
-import organizer1 from "../../assets/images/causes/organizer-1-1.jpg";
-import donor1 from "../../assets/images/causes/donor-1-1.jpg";
-import donor2 from "../../assets/images/causes/donor-1-2.jpg";
+import causeImage1 from "/images/causes/cause-d-1-1.jpg";
+import comment1 from "/images/blog/comment-1-1.jpg";
+import comment2 from "/images/blog/comment-1-2.jpg";
+import organizer1 from "/images/causes/organizer-1-1.jpg";
+import donor1 from "/images/causes/donor-1-1.jpg";
+import donor2 from "/images/causes/donor-1-2.jpg";
 
 const CauseContent = () => {
   return (

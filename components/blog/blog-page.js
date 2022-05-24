@@ -1,15 +1,15 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-import PostPaginations from "../post-paginations";
-import BlogCard from "./blog-card";
+import PostPaginations from "components/post-paginations";
+import BlogCard from "components/blog-card";
 
-import blogImage1 from "../../assets/images/blog/blog-1-1.jpg";
-import blogImage2 from "../../assets/images/blog/blog-1-2.jpg";
-import blogImage3 from "../../assets/images/blog/blog-1-3.jpg";
-import blogImage4 from "../../assets/images/blog/blog-1-4.jpg";
-import blogImage5 from "../../assets/images/blog/blog-1-5.jpg";
-import blogImage6 from "../../assets/images/blog/blog-1-6.jpg";
+const blogImage1 = "/images/blog/blog-1-1.jpg";
+const blogImage2 = "/images/blog/blog-1-2.jpg";
+const blogImage3 = "/images/blog/blog-1-3.jpg";
+const blogImage4 = "/images/blog/blog-1-4.jpg";
+const blogImage5 = "/images/blog/blog-1-5.jpg";
+const blogImage6 = "/images/blog/blog-1-6.jpg";
 
 const BLOG_DATA = [
   {
@@ -19,7 +19,7 @@ const BLOG_DATA = [
     text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     link: "/news-details",
     commentCount: "2 Comments",
-    author: "Admin"
+    author: "Admin",
   },
   {
     image: blogImage2,
@@ -28,7 +28,7 @@ const BLOG_DATA = [
     text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     link: "/news-details",
     commentCount: "2 Comments",
-    author: "Admin"
+    author: "Admin",
   },
   {
     image: blogImage3,
@@ -37,7 +37,7 @@ const BLOG_DATA = [
     text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     link: "/news-details",
     commentCount: "2 Comments",
-    author: "Admin"
+    author: "Admin",
   },
   {
     image: blogImage4,
@@ -46,7 +46,7 @@ const BLOG_DATA = [
     text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     link: "/news-details",
     commentCount: "2 Comments",
-    author: "Admin"
+    author: "Admin",
   },
   {
     image: blogImage5,
@@ -55,7 +55,7 @@ const BLOG_DATA = [
     text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     link: "/news-details",
     commentCount: "2 Comments",
-    author: "Admin"
+    author: "Admin",
   },
   {
     image: blogImage6,
@@ -64,8 +64,8 @@ const BLOG_DATA = [
     text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     link: "/news-details",
     commentCount: "2 Comments",
-    author: "Admin"
-  }
+    author: "Admin",
+  },
 ];
 
 const BlogPage = () => {

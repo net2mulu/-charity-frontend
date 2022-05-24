@@ -1,6 +1,6 @@
 import React from "react";
-import comment1 from "../../assets/images/blog/comment-1-1.jpg";
-import comment2 from "../../assets/images/blog/comment-1-2.jpg";
+import comment1 from "/images/blog/comment-1-1.jpg";
+import comment2 from "/images/blog/comment-1-2.jpg";
 const Comments = () => {
   return (
     <div>

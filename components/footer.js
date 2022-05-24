@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import axios from "axios";
 import { Link as ScrollLink } from "react-scroll";
 import { Container, Row, Col } from "react-bootstrap";
 import { toast } from "react-nextjs-toast";
 
-const logoLight = "/images/logo-light.png";
+const logoLight = "/images/wlogo.png";
 const blogPost1 = "/images/resources/footer-img-1-1.jpg";
 const blogPost2 = "/images/resources/footer-img-1-2.jpg";
 
@@ -44,10 +45,11 @@ const Footer = ({ footerData }) => {
               <div className="footer-widget mb-40 footer-widget__about">
                 <Link href="/">
                   <a aria-label="logo image">
-                    <img
+                    <Image
                       src={logoLight}
-                      className="footer-widget__logo"
                       width="101"
+                      height="40"
+                      className="footer-widget__logo"
                       alt=""
                     />
                   </a>

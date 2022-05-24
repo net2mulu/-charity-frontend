@@ -1522,10 +1522,10 @@
   position: relative;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  background-color: var(--thm-black);
+  background-color: #4ecd99;
 }
 
-.blog-card__image > img {
+.blog-card__image > Image {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -5653,12 +5653,13 @@ h6 {
 --------------------------------------------------------------*/
 .about-one .container {
   position: relative;
+
 }
 
 .about-one [class*="col-"] .img-fluid {
-  border-radius: 15px;
-  -webkit-box-shadow: 0px 10px 0px 0px var(--thm-base);
-  box-shadow: 0px 10px 0px 0px var(--thm-base);
+  /* border-radius: 15px; */
+  /* -webkit-box-shadow: 0px 10px 0px 0px var(--thm-base);
+  box-shadow: 0px 10px 0px 0px var(--thm-base); */
 }
 
 @media (max-width: 991px) {
@@ -5669,8 +5670,8 @@ h6 {
 }
 
 .about-one [class*="col-"]:nth-child(3) .img-fluid {
-  -webkit-box-shadow: 0px 10px 0px 0px var(--thm-primary);
-  box-shadow: 0px 10px 0px 0px var(--thm-primary);
+  /* -webkit-box-shadow: 0px 10px 0px 0px var(--thm-primary);
+  box-shadow: 0px 10px 0px 0px var(--thm-primary); */
 }
 
 .about-one .team-about__top-text {
@@ -5685,7 +5686,7 @@ h6 {
   transform: translate(-50%, -50%);
   width: 150px;
   height: 150px;
-  background-color: var(--thm-secondary);
+  background-color: #e7f709;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6148,13 +6149,11 @@ h6 {
 .testimonials-one__image::before {
   content: "";
   width: 38px;
-  background-color: var(--thm-base);
   height: 38px;
   display: block;
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 50%;
-  background-image: url(/images/shapes/testimonials-qoute-1-1.png);
   position: absolute;
   bottom: 0;
   left: 50%;

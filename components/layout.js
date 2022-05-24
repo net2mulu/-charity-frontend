@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import Head from "next/head";
-import MobileNav from "./mobile-nav";
-import SearchPopup from "./search-popup";
+import MobileNav from "components/mobile-nav";
+import SearchPopup from "components/search-popup";
 import Image from "next/image";
-import Footer from "./footer";
+import Footer from "components/footer";
 import { ToastContainer } from "react-nextjs-toast";
 
 

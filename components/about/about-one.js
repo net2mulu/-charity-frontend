@@ -1,24 +1,42 @@
 import React from "react";
+import Image from "next/image";
 import { Container, Row, Col } from "react-bootstrap";
 
-const  about1 =  "/images/shapes/about-bag-1-1.png";
-const  about2 =  "/images/resources/about-1-1.jpg";
-const  about3 =  "/images/resources/about-1-2.jpg";
-const  heart  = "/images/shapes/heart-2-1.png";
+const AboutOne = ({ aboutData }) => {
+  const { url } = aboutData.data.attributes.centerLogo.data.attributes;
+  const { moto, small_title, description1, description2 } =
+    aboutData.data.attributes;
 
-const AboutOne = () => {
   return (
     <section className="about-one pt-120 pb-40">
       <Container>
         <Row>
           <div className="about-one__award">
-            <img src={about1} alt="" />
+            <Image
+              src={`http://localhost:1337${url}`}
+              width="100px"
+              height="100px"
+              alt=""
+            />
           </div>
-          <Col lg={6}>
-            <img src={about2} alt="" className="img-fluid" />
+          <Col lg={5} style={{ width: "565px", height: "272px" }}>
+            <Image
+              src={`http://localhost:1337${aboutData.data.attributes.bcd1.data.attributes.url}`}
+              layout="fill"
+              objectFit="cover"
+              style={{ borderRadius: "15px" }}
+              className="img-fluid"
+            />
           </Col>
-          <Col lg={6}>
-            <img src={about3} alt="" className="img-fluid" />
+          <Col lg={2} />
+          <Col lg={5} style={{ width: "565px", height: "272px" }}>
+            <Image
+              src={`http://localhost:1337${aboutData.data.attributes.bcd2.data.attributes.url}`}
+              layout="fill"
+              objectFit="cover"
+              style={{ borderRadius: "15px" }}
+              className="img-fluid"
+            />
           </Col>
         </Row>
       </Container>
@@ -27,26 +45,15 @@ const AboutOne = () => {
           <Row>
             <Col md={12} lg={4}>
               <div className="block-title">
-                <p>
-                  <img src={heart} width="15" alt="" />
-                  Make a Difference
-                </p>
-                <h3>Let’s help them together.</h3>
+                <p>{small_title}</p>
+                <h3>{moto}</h3>
               </div>
             </Col>
             <Col md={12} lg={4}>
-              <p className="team-about__top-text">
-                Tincidunt elit magnis nulla facilisis sagittis is maecenas.
-                Sapien nunced amet ultrices, dolores sit ipsum velit purus
-                aliquet, massa fringilla leo orci ipsum dolor sit.
-              </p>
+              <p className="team-about__top-text">{description1}</p>
             </Col>
             <Col md={12} lg={4}>
-              <p className="team-about__top-text">
-                Sapien nunced amet ultrices, dolores sit ipsum velit purus
-                aliquet, massa fringilla leo orci. Lorem ipsum dolor sit amet.
-                consectetur adipisi cing elit dolo.
-              </p>
+              <p className="team-about__top-text">{description2}</p>
             </Col>
           </Row>
         </div>

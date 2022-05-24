@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { Accordion, Container, Row, Col, Card } from "react-bootstrap";
 import { useAccordionToggle } from "react-bootstrap/AccordionToggle";
 import AccordionContext from "react-bootstrap/AccordionContext";
-import heart from "../assets/images/shapes/heart-2-1.png";
-import heart1 from "../assets/images/shapes/about-count-heart-1-1.png";
-import faqImage from "../assets/images/resources/faq-box-1-1.jpg";
+import heart from "/images/shapes/heart-2-1.png";
+import heart1 from "/images/shapes/about-count-heart-1-1.png";
+import faqImage from "/images/resources/faq-box-1-1.jpg";
 
 const ContextAwareToggle = ({ children, eventKey, callback }) => {
   const currentEventKey = useContext(AccordionContext);
