@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
-import NavLinks from "components/nav-links";
+import NavLinks from "components/header/nav-links";
 import Image from "next/image";
 import { MenuContext } from "context/menu-context";
 

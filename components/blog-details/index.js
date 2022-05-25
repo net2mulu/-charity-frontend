@@ -1,23 +1,18 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import BlogContent from "components/blog-content";
-import Comments from "components/comments";
-import CommentForm from "components/comment-form";
-import BlogSidebar from "components/blog-sidebar";
+import BlogContent from "components/blog-details/blog-content";
+import BlogSidebar from "components/blog-details/blog-sidebar";
 
-const BlogDetails = () => {
+const BlogDetails = ({loading, detaildata }) => {
   return (
     <section className="blog-details pt-120 pb-40">
       <Container>
         <Row>
-          <Col md={12} lg={8}>
-            <BlogContent />
-            <Comments />
-            <CommentForm />
+          <Col md={12} lg={12}>
+            <BlogContent loading={loading} detaildata={detaildata} />
           </Col>
-          <Col md={12} lg={4}>
+          {/* <Col md={12} lg={4}>
             <BlogSidebar />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </section>

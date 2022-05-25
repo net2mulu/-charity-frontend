@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import NavLinks from "components/nav-links";
+import NavLinks from "components/header/nav-links";
 const logoLight = "/images/wlogo.png";
 
 const StickyHeader = ({ extraClassName }) => {

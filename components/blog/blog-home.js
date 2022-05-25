@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import BlockTitle from "components/block-title";
-import BlogCard from "components/blog-card";
+import BlogCard from "components/blog/blog-card";
 
 const blogImage1 = "/images/blog/blog-1-1.jpg";
 const blogImage2 = "/images/blog/blog-1-2.jpg";

@@ -1,7 +1,7 @@
 import React from "react";
-import postImage1 from "/images/blog/blog-s-1.jpg";
-import postImage2 from "/images/blog/blog-s-2.jpg";
-import postImage3 from "/images/blog/blog-s-3.jpg";
+const postImage1 = "/images/blog/blog-s-1.jpg";
+const postImage2 = "/images/blog/blog-s-2.jpg";
+const postImage3 = "/images/blog/blog-s-3.jpg";
 
 const BlogSidebar = () => {
   return (
@@ -90,23 +90,7 @@ const BlogSidebar = () => {
           </li>
         </ul>
       </div>
-      <div className="blog-sidebar__single">
-        <h3>Comments</h3>
-        <ul className="blog-sidebar__comments">
-          <li>
-            <a href="#">A Wordpress Commenter on Launch New Mobile App</a>
-          </li>
-          <li>
-            <a href="#">John Doe on Template: Comments</a>
-          </li>
-          <li>
-            <a href="#">A Wordpress Commenter on Launch New Mobile App</a>
-          </li>
-          <li>
-            <a href="#">John Doe on Template: Comments</a>
-          </li>
-        </ul>
-      </div>
+   
     </div>
   );
 };

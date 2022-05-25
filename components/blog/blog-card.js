@@ -12,19 +12,19 @@ const BlogCard = ({ image, title, date, text, link, commentCount, author }) => {
         </div>
         <div className="blog-card__content">
           <div className="blog-card__meta">
-            <Link href={link}>
+            <Link href={`/blog/${link}`}>
               <a>
                 <i className="far fa-user-circle"></i> {`By: ${author}`}
               </a>
             </Link>
           </div>
           <h3>
-            <Link href={link}>
+            <Link href={`/blog/${link}`}>
               <a>{title}</a>
             </Link>
           </h3>
           <p>{text}</p>
-          <Link href={link}>
+          <Link href={`/blog/${link}`}>
             <a className="blog-card__more">
               <i className="far fa-angle-right"></i>Read More
             </a>
