@@ -22,7 +22,7 @@ const VideoCard = ({ vidcta }) => {
       />
       <div
         className="video-card__bg"
-        style={{ backgroundImage: `url(http://localhost:1337${url})` }}
+        style={{ backgroundImage: `url(${process.env.API_URL + url})` }}
       ></div>
 
       <Container className=" text-center pt-120 pb-120">

@@ -25,7 +25,7 @@ const NavLinks = ({ extraClassName }) => {
           <a>About</a>
         </Link>
       </li>
-      <li className="dropdown">
+      {/* <li className="dropdown">
         <Link href="/causes">
           <>
             <a>Causes</a>
@@ -74,13 +74,13 @@ const NavLinks = ({ extraClassName }) => {
             </Link>
           </li>
         </ul>
-      </li>
+      </li> */}
       <li className="">
         <Link href="/blog">
           <a>Blog</a>
         </Link>
       </li>
-      <li className="dropdown">
+      {/* <li className="dropdown">
         <Link href="#">
           <>
             <a>Pages</a>
@@ -119,7 +119,7 @@ const NavLinks = ({ extraClassName }) => {
         <Link href="/contact">
           <a>Contact</a>
         </Link>
-      </li>
+      </li> */}
       <li className="search-btn search-toggler" onClick={handleSearchClick}>
         <span>
           <i className="azino-icon-magnifying-glass"></i>

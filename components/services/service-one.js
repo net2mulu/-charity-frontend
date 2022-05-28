@@ -12,7 +12,6 @@ const ServiceOne = ({ homeServices }) => {
       style={{ backgroundImage: `url(${serviceBg})` }}
     >
       <Container>
-        <img src={serviceLine} alt="" className="service-one__shape-1" />
         <div className="block-title">
           <p>Together we can!</p>
           <h3>

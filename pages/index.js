@@ -14,6 +14,7 @@ import TeamHome from "components/team/team-home";
 import BrandCarousel from "components/brand-carousel";
 
 export default function Home(props) {
+
   return (
     <MenuContextProvider>
       <SearchContextProvider>
@@ -42,26 +43,28 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps() {
-  const header = await fetch("http://localhost:1337/api/header-infrormation");
+  const header = await fetch(`${process.env.API_URL}/api/header-infrormation`);
   const headerData = await header.json();
-  const banner = await fetch("http://localhost:1337/api/banners?populate=*");
+  const banner = await fetch(`${process.env.API_URL}/api/banners?populate=*`);
   const bannerData = await banner.json();
-  const vedio = await fetch("http://localhost:1337/api/vedio-intro?populate=*");
+  const vedio = await fetch(
+    `${process.env.API_URL}/api/vedio-intro?populate=*`
+  );
   const vedioIntro = await vedio.json();
-  const homeservice = await fetch("http://localhost:1337/api/home-services");
+  const homeservice = await fetch(`${process.env.API_URL}/api/home-services`);
   const homeServices = await homeservice.json();
   const footer = await fetch(
-    "http://localhost:1337/api/footer-information?populate=*"
+    `${process.env.API_URL}/api/footer-information?populate=*`
   );
   const footerData = await footer.json();
 
-  const cta = await fetch("http://localhost:1337/api/cta?populate=*");
+  const cta = await fetch(`${process.env.API_URL}/api/cta?populate=*`);
   const ctaData = await cta.json();
 
-  const brand = await fetch("http://localhost:1337/api/partners?populate=*");
+  const brand = await fetch(`${process.env.API_URL}/api/partners?populate=*`);
   const brandData = await brand.json();
   const aboutcard = await fetch(
-    "http://localhost:1337/api/about-card?populate=*"
+    `${process.env.API_URL}/api/about-card?populate=*`
   );
   const aboutcardData = await aboutcard.json();
 

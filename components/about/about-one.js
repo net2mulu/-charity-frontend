@@ -13,15 +13,19 @@ const AboutOne = ({ aboutData }) => {
         <Row>
           <div className="about-one__award">
             <Image
-              src={`http://localhost:1337${url}`}
+              src={`${process.env.API_URL + url}`}
               width="100px"
               height="100px"
-              alt=""
+              alt={moto}
             />
           </div>
           <Col lg={5} style={{ width: "565px", height: "272px" }}>
             <Image
-              src={`http://localhost:1337${aboutData.data.attributes.bcd1.data.attributes.url}`}
+              src={`${
+                process.env.API_URL +
+                aboutData.data.attributes.bcd1.data.attributes.url
+              }`}
+              alt={moto}
               layout="fill"
               objectFit="cover"
               style={{ borderRadius: "15px" }}
@@ -31,7 +35,11 @@ const AboutOne = ({ aboutData }) => {
           <Col lg={2} />
           <Col lg={5} style={{ width: "565px", height: "272px" }}>
             <Image
-              src={`http://localhost:1337${aboutData.data.attributes.bcd2.data.attributes.url}`}
+              src={`${
+                process.env.API_URL +
+                aboutData.data.attributes.bcd2.data.attributes.url
+              }`}
+              alt={moto}
               layout="fill"
               objectFit="cover"
               style={{ borderRadius: "15px" }}

@@ -2,15 +2,14 @@ import React from "react";
 import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 
-
 const CallToActionTwo = ({ ctaData }) => {
-  const { small_desc , long_desc } = ctaData.data.attributes;
+  const { small_desc, long_desc } = ctaData.data.attributes;
   const { url } = ctaData.data.attributes.background.data.attributes;
   return (
     <section className="call-to-action-two">
       <div
         className="call-to-action-two__bg"
-        style={{ backgroundImage: `url(http://localhost:1337${url})` }}
+        style={{ backgroundImage: `url(${process.env.API_URL + url})` }}
       ></div>
       <Container className="container pt-80 pb-80">
         <i className="azino-icon-charity call-to-action-two__icon"></i>

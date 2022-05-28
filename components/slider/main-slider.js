@@ -3,13 +3,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Pagination, EffectFade } from "swiper";
 
-const banner1 = "/images/main-slider/slider-1-1.jpg";
-const banner2 = "/images/main-slider/slider-1-2.jpg";
-const banner3 = "/images/main-slider/slider-2-1.jpg";
-
 SwiperCore.use([Autoplay, Pagination, EffectFade]);
 
 const MainSlider = ({ bannerData }) => {
+
   const mainSlideOptions = {
     slidesPerView: 1,
     loop: true,
@@ -31,7 +28,10 @@ const MainSlider = ({ bannerData }) => {
             <div
               className="image-layer"
               style={{
-                backgroundImage: `url(http://localhost:1337${data.attributes.picture.data.attributes.url})`,
+                backgroundImage: `url(${
+                  process.env.API_URL +
+                  data.attributes.picture.data.attributes.url
+                })`,
               }}
             ></div>
 

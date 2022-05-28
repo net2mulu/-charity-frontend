@@ -15,7 +15,7 @@ const BlogPage = () => {
     const fetchPosts = async () => {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:1337/api/blogs?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${blogPerPage}`
+        `${process.env.API_URL}/api/blogs?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${blogPerPage}`
       );
       setBlogs(res.data);
       setLoading(false);
@@ -25,46 +25,51 @@ const BlogPage = () => {
   }, [currentPage]);
 
   return (
-    <section className="news-page pt-120 pb-120">
-      <Container>
-        <div className="news-3-col">
-          {blogs.data &&
-            blogs.data.map((data, index) => (
-              <BlogCard
-                key={index}
-                image={`http://localhost:1337${data.attributes.image.data.attributes.url}`}
-                title={
-                  data.attributes.title.length > 40
-                    ? `${data.attributes.title.substring(0, 40)}...`
-                    : data.attributes.title
-                }
-                date={
-                  new Date(data.attributes.createdAt).getDate() +
-                  " " +
-                  new Date(data.attributes.createdAt).toLocaleString(
-                    "default",
-                    {
-                      month: "short",
-                    }
-                  )
-                }
-                text={
-                  data.attributes.description.length > 100
-                    ? `${data.attributes.description.substring(0, 100)}...`
-                    : data.attributes.description
-                }
-                link={data.attributes.slug}
-                author={"admin"}
-              />
-            ))}
-        </div>
-        <PostPaginations
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          meta={blogs?.meta}
-        />
-      </Container>
-    </section>
+    <div>
+      <section className="news-page pt-120 pb-120">
+        <Container>
+          <div className="news-3-col">
+            {blogs.data &&
+              blogs.data.map((data, index) => (
+                <BlogCard
+                  key={index}
+                  image={`${
+                    process.env.API_URL +
+                    data.attributes.image.data.attributes.url
+                  }`}
+                  title={
+                    data.attributes.title.length > 40
+                      ? `${data.attributes.title.substring(0, 40)}...`
+                      : data.attributes.title
+                  }
+                  date={
+                    new Date(data.attributes.createdAt).getDate() +
+                    " " +
+                    new Date(data.attributes.createdAt).toLocaleString(
+                      "default",
+                      {
+                        month: "short",
+                      }
+                    )
+                  }
+                  text={
+                    data.attributes.description.length > 100
+                      ? `${data.attributes.description.substring(0, 100)}...`
+                      : data.attributes.description
+                  }
+                  link={data.attributes.slug}
+                  author={"admin"}
+                />
+              ))}
+          </div>
+          <PostPaginations
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            meta={blogs?.meta}
+          />
+        </Container>
+      </section>
+    </div>
   );
 };
 

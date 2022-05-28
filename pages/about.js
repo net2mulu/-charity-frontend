@@ -46,24 +46,24 @@ const About = (props) => {
 export default About;
 
 export async function getServerSideProps() {
-  const header = await fetch("http://localhost:1337/api/header-infrormation");
+  const header = await fetch(`${process.env.API_URL}/api/header-infrormation`);
   const headerData = await header.json();
 
   const footer = await fetch(
-    "http://localhost:1337/api/footer-information?populate=*"
+    `${process.env.API_URL}/api/footer-information?populate=*`
   );
   const footerData = await footer.json();
 
-  const brand = await fetch("http://localhost:1337/api/partners?populate=*");
+  const brand = await fetch(`${process.env.API_URL}/api/partners?populate=*`);
   const brandData = await brand.json();
 
   const about = await fetch(
-    "http://localhost:1337/api/about?populate[header][populate][0]=background&populate[vidcta][populate][0]=background&populate[bcd1][populate][0]=*&populate[bcd2][populate][0]=*&populate[centerLogo][populate][0]=*"
+    `${process.env.API_URL}/api/about?populate[header][populate][0]=background&populate[vidcta][populate][0]=background&populate[bcd1][populate][0]=*&populate[bcd2][populate][0]=*&populate[centerLogo][populate][0]=*`
   );
   const aboutData = await about.json();
 
   const aboutcard = await fetch(
-    "http://localhost:1337/api/about-card?populate=*"
+    `${process.env.API_URL}/api/about-card?populate=*`
   );
   const aboutcardData = await aboutcard.json();
 

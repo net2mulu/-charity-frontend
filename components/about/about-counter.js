@@ -28,8 +28,8 @@ const AboutCounter = ({ aboutcardData }) => {
             </div>
             <p className="about-counter__text">{description}</p>
             <ul className="list-unstyled ul-list-one">
-              {Listings.map((data) => (
-                <li>{data.text}</li>
+              {Listings.map((data,id) => (
+                <li key={id}>{data.text}</li>
               ))}
             </ul>
             <div className="about-counter__count">
@@ -53,7 +53,7 @@ const AboutCounter = ({ aboutcardData }) => {
               className="about-counter__image clearfix"
             >
               <Image
-                src={`http://localhost:1337${url}`}
+                src={`${process.env.API_URL + url}`}
                 layout="fill"
                 objectFit="cover"
                 alt=""

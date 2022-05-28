@@ -13,7 +13,7 @@ const blogPost2 = "/images/resources/footer-img-1-2.jpg";
 const submitForm = async (e) => {
   e.preventDefault();
   await axios
-    .post("http://localhost:1337/api/newsletter-emails", {
+    .post(`${process.env.API_URL}/api/newsletter-emails`, {
       data: {
         email: e.target.email.value,
       },

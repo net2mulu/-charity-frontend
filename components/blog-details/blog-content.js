@@ -1,19 +1,21 @@
 import Image from "next/image";
-const blogDetailsImage = "/images/blog/blog-d-1-1.jpg";
+import Loader from "components/loader";
 
 const BlogContent = ({ loading, detaildata }) => {
-  console.log(detaildata)
   return (
     <div>
       {loading ? (
-        <h1>Loading...</h1>
+        <Loader />
       ) : (
         <div>
           <div className="blog-card__image">
             <Image
               width="1500"
               height="1000"
-              src={`http://localhost:1337${detaildata.data[0].attributes.image.data.attributes.url}`}
+              src={`${
+                process.env.API_URL +
+                detaildata.data[0].attributes.image.data.attributes.url
+              }`}
               alt=""
             />
             <div className="blog-card__date">20 May</div>
@@ -29,6 +31,29 @@ const BlogContent = ({ loading, detaildata }) => {
               __html: detaildata.data[0].attributes.body,
             }}
           />
+          <div className="blog-details__meta">
+            <ul className="list-unstyled blog-details__category">
+              <li>
+                <span>Tags:</span>
+              </li>
+
+              {detaildata.data[0].attributes.tags.data.map((data) => (
+                <li key={data.id}>
+                  <a href="#">{data.attributes.name}</a>
+                </li>
+              ))}
+            </ul>
+            <ul className="list-unstyled blog-details__category">
+              <li>
+                <span>Category:</span>
+              </li>
+              <li>
+                <a href="#">
+                  {detaildata.data[0].attributes.category.data.attributes.name}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       )}
     </div>

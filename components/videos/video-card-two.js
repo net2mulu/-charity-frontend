@@ -25,7 +25,7 @@ const VideoCardTwo = ({ vedioIntro }) => {
       <Container>
         <div
           className="inner-container"
-          style={{ backgroundImage: `url(http://localhost:1337${videoBg})` }}
+          style={{ backgroundImage: `url(${videoBg})` }}
         >
           <Row className="align-items-center">
             <Col lg={3}>
@@ -38,7 +38,7 @@ const VideoCardTwo = ({ vedioIntro }) => {
                   className="img-box"
                   layout="fill"
                   objectFit="cover"
-                  src={`http://localhost:1337${url}`}
+                  src={`${process.env.API_URL + url}`}
                   alt=""
                 />
                 <span

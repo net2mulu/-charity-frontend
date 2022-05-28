@@ -2,11 +2,12 @@ import React from "react";
 import Link from "next/link";
 
 const PageHeader = ({ title, crumbTitle, url }) => {
+  console.log(url);
   return (
     <section className="page-header">
       <div
         className="page-header__bg"
-        style={{ backgroundImage: `url(http://localhost:1337${url})` }}
+        style={{ backgroundImage: `url(${process.env.API_URL + url})` }}
       ></div>
 
       <div className="container">

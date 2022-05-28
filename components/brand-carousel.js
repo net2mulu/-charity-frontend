@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-
 const BrandCarousel = ({ extraClass, brandData }) => {
   const brandCarouselOptions = {
     spaceBetween: 100,
@@ -44,7 +43,10 @@ const BrandCarousel = ({ extraClass, brandData }) => {
               <SwiperSlide key={data.id}>
                 <div>
                   <Image
-                    src={`http://localhost:1337${data.attributes.logo.data.attributes.url}`}
+                    src={`${
+                      process.env.API_URL +
+                      data.attributes.logo.data.attributes.url
+                    }`}
                     alt=""
                     width={data.attributes.logo.data.attributes.width}
                     height={data.attributes.logo.data.attributes.height}

@@ -8,6 +8,8 @@ import MenuContextProvider from "context/menu-context";
 import SearchContextProvider from "context/search-context";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { Container, Row, Col } from "react-bootstrap";
+import Loader from "@/components/loader";
 
 const BlogDetail = ({ footerData, headerData }) => {
   const [detaildata, setDetaildata] = useState([]);
@@ -15,11 +17,11 @@ const BlogDetail = ({ footerData, headerData }) => {
   const router = useRouter();
   const { slug } = router.query;
 
-  http: useEffect(() => {
+  useEffect(() => {
     const fetchDetail = async () => {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:1337/api/blogs?filters[slug][$eq]=${slug}&populate=*`
+        `${process.env.API_URL}/api/blogs?filters[slug][$eq]=${slug}&populate=*`
       );
       setDetaildata(res.data);
       setLoading(false);
@@ -34,11 +36,27 @@ const BlogDetail = ({ footerData, headerData }) => {
         <Layout pageTitle="Welcome to Andinet Yichalal" footerData={footerData}>
           <HeaderOne headerData={headerData} />
           <StickyHeader />
-          <PageHeader title="Blog Details" crumbTitle="Blog" />
-          {detaildata ? (
+          <PageHeader
+            url={
+              detaildata.data &&
+              detaildata.data[0].attributes.image.data.attributes.url
+            }
+            title={detaildata.data && detaildata.data[0].attributes.title}
+            crumbTitle="Blog"
+          />
+          {detaildata.data ? (
             <BlogDetails loading={loading} detaildata={detaildata} />
           ) : (
-            <h1>Loading...</h1>
+            <section className="blog-details pt-120 pb-40">
+              <Container>
+                <Row>
+                  <Col lg={5}></Col>
+                  <Col lg={4}>
+                    <Loader type="spin" color="#aaa" />
+                  </Col>
+                </Row>
+              </Container>
+            </section>
           )}
         </Layout>
       </SearchContextProvider>
@@ -49,12 +67,13 @@ const BlogDetail = ({ footerData, headerData }) => {
 export default BlogDetail;
 
 export async function getServerSideProps() {
-  const header = await fetch("http://localhost:1337/api/header-infrormation");
+  const header = await fetch(`${process.env.API_URL}/api/header-infrormation`);
   const headerData = await header.json();
   const footer = await fetch(
-    "http://localhost:1337/api/footer-information?populate=*"
+    `${process.env.API_URL}/api/footer-information?populate=*`
   );
   const footerData = await footer.json();
+
   return {
     props: {
       footerData,
